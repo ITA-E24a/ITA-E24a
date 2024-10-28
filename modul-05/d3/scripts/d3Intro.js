@@ -12,7 +12,7 @@ d3.select("#data")
   .enter()
 //Ændrer <p>-elementer 
   .append("p")
-//Teksten ændres med nedenstående function
+//Teksten ændres med nedenstående function..
   .text(function (d) {
     return d;
   });
