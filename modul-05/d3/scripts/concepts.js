@@ -15,6 +15,9 @@ const car = {
     console.log("HOOOOONK!!!!!!");
     return this;
   },
+  toString: ()=>{
+    return this.color + " " + this.speed;
+  }
 };
 
 console.log(car.speed);
