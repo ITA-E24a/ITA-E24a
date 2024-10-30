@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
+<!-- Sætter tegnsætningen til UTF-8 for at sikre korrekt visning af specialtegn -->
     <meta charset="utf-8" />
   </head>
   <body>
+<!-- Tom div med id "data", hvor vi kan indsætte dynamisk indhold via D3 -->
     <div id="data"></div>
+<!-- Tom div med id "dataJSON", som kan bruges til at vise JSON-data -->
     <div id="dataJSON"></div>
+<!-- D3.js bibliotek hentes, så vi kan bruge D3-metoder i denne fil -->
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<!-- Indlæser det første script, "d3Intro.js -->
     <script src="scripts/d3Intro.js"></script>
+<!-- Indlæser det andet script, "d3LoadJson.js" -->
     <script src="scripts/d3LoadJson.js"></script>
   </body>
 </html>
