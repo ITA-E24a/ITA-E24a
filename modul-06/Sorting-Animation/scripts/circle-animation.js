@@ -17,10 +17,10 @@ d3.selectAll("circle")
   //En transition begynder
   .transition()
   //duration er hvor lang tid transitionen skal tage
-  .duration(2000)
-  //herunder definerer vi slutværdierne for transitionen - cirklens cx rykkes således fra 100 - 600
+  .duration(4000)
+  //herunder definerer vi slutværdierne for transitionen - cirklens cx rykkes således fra 100 - 900
   .attr("cx", 900)
-  //Nu strater vi endnu en trasition som skal bevæge cirklen tilbage til 100
+  //Nu starter vi endnu en trasition som skal bevæge cirklen tilbage til 100
   .transition()
   //duration er hvor lang tid transitionen skal tage
   .duration(4000)
