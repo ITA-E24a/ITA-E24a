@@ -12,6 +12,16 @@ const dataset = [
   [475, 44],
 ];
 
+const color = d3
+.scaleLinear()
+.domain([
+  0,
+  d3.max(dataset, function (d) {
+    return d[0];
+  }),
+])
+.range(["#FCD4F5", "#C12FA8"]);
+
 //SVG-elementet
 const svg = d3.select("body").append("svg").attr("width", w).attr("height", h);
 
@@ -58,8 +68,11 @@ svg
   })
   // Radius er sat til at være kvadratroden af y-værdien
   .attr("r", function (d) {
-    return Math.sqrt(d[1]);
-  });
+    return Math.sqrt(d[1])
+  })
+  .attr("fill", function (d) {
+    return color(d[0]);
+  })
 
 //Labels på y-værdien
 svg

@@ -120,4 +120,5 @@ svg
 
 /**
  * Bonusspørgsmål: Er der en værdi, som vi med fordel kan gemme i en variabel i dette eksempel?
+ * ja, det kunne være en variabel padding som indeholder de 30
  **/
