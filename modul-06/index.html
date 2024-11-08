@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const numberArray = [2, 6, 4, 9, "0", 1, 7, 2, 3, "7q", 8, 0, 1, 4, 6];
+
+      console.log(numberArray);
+
+      numberArray.sort(function (a, b) {
+        return b - a;
+      });
+      console.log(numberArray);
+
+      const letterArray = [
+        "s",
+        "g",
+        "h",
+        "y",
+        "r",
+        "binan",
+        "w",
+        "e",
+        "o",
+        42,
+        "banan",
+        "d",
+        "x",
+        "g",
+        "j",
+      ];
+
+      console.log(letterArray);
+
+      letterArray.sort();
+
+      console.log(letterArray);
+    </script>
+  </body>
+</html>
