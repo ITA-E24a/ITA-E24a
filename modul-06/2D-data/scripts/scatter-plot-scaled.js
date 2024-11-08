@@ -24,6 +24,7 @@ const xScale = d3
       return d[0];
     }),
   ])
+  //Rykker skalaen ind på siden
   .range([30, w - 30])
   .nice();
 
@@ -36,6 +37,7 @@ const yScale = d3
       return d[1];
     }),
   ])
+  //Rykker skalaen ind på siden
   .range([30, h - 30])
   .nice();
 
@@ -51,7 +53,7 @@ svg
     return xScale(d[0]);
   })
   .attr("cy", function (d) {
-    //Anden værdi i indre array (y)  - som scales med vores yScale
+    //Anden værdi i indre array (y)  - som scales med vores yScale. Tilføjes for at få dataen stigende
     return yScale(h - d[1]);
   })
   // Radius er sat til at være kvadratroden af y-værdien
@@ -66,11 +68,14 @@ svg
   .enter()
   .append("text")
   .text(function (d) {
+  //"Tekst" som skrives 
     return d[1];
   })
+  //Placering på x-aksen
   .attr("x", function (d) {
-    return xScale(d[0]) + 5;
+    return xScale(d[0]) + 50;
   })
+  //Placering på y-aksen
   .attr("y", function (d) {
     return yScale(h - d[1]) - 5;
   })

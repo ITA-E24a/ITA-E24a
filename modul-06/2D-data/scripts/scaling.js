@@ -8,6 +8,7 @@ console.log("Manual mapping of 500: " + mapping(500));
 console.log("Manual mapping of 50: " + mapping(50));
 
 //D3 mapping 'input'-domain til 'output'-range
+//domain er et d3 keyword som definerer værdispændet og range (d3) er størrelsen til rådighed. Laver samme udregning som vist i vanilla linje 2-4
 const scale = d3.scaleLinear().domain([0, 1000]).range([0, 300]);
 
 console.log("Scale mapping of 1000: " + scale(1000));
@@ -16,6 +17,7 @@ console.log("Scale mapping of 50: " + scale(50));
 
 const numbers = [5, 10, 2, 7, 12, 8];
 
+//Vha. d3 findes højeste og laveste tal i numbers. Ligges i let variabler med min og maxValue
 let maxValue = d3.max(numbers);
 let minValue = d3.min(numbers);
 console.log(maxValue);
@@ -25,7 +27,8 @@ console.log(minValue);
 const w = 500;
 const h = 100;
 
-//Skala for y-aksen
+//Skala for y-aksen. Domain anvendes igen og her ligges max-value ind på højeste værdi, i værdispændet.
+//Range defineres fra 0 op til højden (h) af vores svg-element
 const yScaleOLD = d3
   .scaleLinear()
   .domain([
@@ -36,6 +39,8 @@ const yScaleOLD = d3
   ])
   .range([0, h]);
 
+//consollen skriver værdierne fra numbers
+//Math.runder tallet op og ned yScaleOld henter hele værdispænd og størrelsen på skalaen
 for (let n in numbers) {
   console.log("original value: " + numbers[n]);
   console.log("scaled value: " + Math.round(yScaleOLD(numbers[n])));
@@ -79,6 +84,6 @@ for (let d in data) {
     "scaled x,y: " +
       Math.round(xScale(data[d][0])) +
       "," +
-      Math.round(xScale(data[d][1]))
+      Math.round(yScale(data[d][1]))
   );
 }
