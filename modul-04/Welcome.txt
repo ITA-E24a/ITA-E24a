@@ -1,9 +1,0 @@
-Velkommen til mit repo!
-
-<<<<<<< HEAD
-Tak Thomas du er mega god.
-=======
-Ja det er!
-
-hest
->>>>>>> main
