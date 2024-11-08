@@ -25,6 +25,7 @@ const xScale = d3
     }),
   ])
   .range([30, w - 30])
+//Runder domænet af så det har pæne værdier i hver ende
   .nice();
 
 //Skala for y-aksen
@@ -52,6 +53,7 @@ svg
   })
   .attr("cy", function (d) {
     //Anden værdi i indre array (y)  - som scales med vores yScale
+    //Vi tæller fra bunden af elementet h, og tæller op. Det vender omvendt i forhold til normalt
     return yScale(h - d[1]);
   })
   // Radius er sat til at være kvadratroden af y-værdien
@@ -59,21 +61,25 @@ svg
     return Math.sqrt(d[1]);
   });
 
-//Labels
+//Labels på y-værdien
 svg
   .selectAll("text")
   .data(dataset)
   .enter()
   .append("text")
+  //Vi tilføjer et tekstelement, som svarer til y-værdien i vores data
   .text(function (d) {
     return d[1];
   })
+  //Skriver teksten ovenpå cirklen + 5 til højre
   .attr("x", function (d) {
     return xScale(d[0]) + 5;
   })
+  //og -5 ned (altså 5 op)
   .attr("y", function (d) {
     return yScale(h - d[1]) - 5;
   })
+  //Laver styling på teksten
   .attr("font-family", "sans-serif")
   .attr("font-size", "11px")
   .attr("fill", "red");
