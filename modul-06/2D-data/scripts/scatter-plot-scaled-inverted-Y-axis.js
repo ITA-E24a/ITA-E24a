@@ -1,6 +1,7 @@
 // Width og height til SVG-elementet
 const w = 700;
 const h = 300;
+const p = 30;
 
 const dataset = [
   [5, 20],
@@ -109,13 +110,13 @@ svg
   //Først laves en svg-group med "g"
   .append("g")
   //Så flyttes den til bunden af grafen
-  .attr("transform", "translate(0," + (h - 30) + ")")
+  .attr("transform", "translate(0," + (h - p) + ")")
   //Magi som får akserne til at blive tegnet
   .call(xAxis);
 
 svg
   .append("g")
-  .attr("transform", "translate(" + 30 + ",0)")
+  .attr("transform", "translate(" + p + ",0)")
   .call(yAxis);
 
 /**
