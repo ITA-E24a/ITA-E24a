@@ -5,12 +5,14 @@
  * @param {string} artist : The artist name for the album
  * @param {string} album : The album name
  * @param {integer} totalTracks : The total number of tracks for the album
+ * @param {array} trackList
  */
 
 function Album(artist, album, totalTracks) {
   this.artist = artist;
   this.album = album;
   this.totalTracks = totalTracks;
+  this.trackList =this.trackList;
 }
 
 /**
@@ -29,6 +31,7 @@ function addDivWithAlbum(album, parentid) {
     " | Album contains " +
     album.totalTracks +
     " tracks" +
+    album.trackList
     "</div>";
   parentElement.innerHTML = parentElement.innerHTML + elementToAdd;
 }
