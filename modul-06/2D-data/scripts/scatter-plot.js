@@ -21,15 +21,10 @@ svg
   .data(dataset)
   .enter()
   .append("circle")
-  //'d' et element i 'dataset',
-  //som selv er et array med x,y koordinater
   .attr("cx", function (d) {
-    // Første værdi i indre array (x)
     return d[0];
   })
   .attr("cy", function (d) {
-    //Anden værdi i indre array (y)
     return d[1];
   })
-  //Radius er en konstant på '5'
   .attr("r", 5);
