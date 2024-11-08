@@ -11,7 +11,7 @@ svg
   .attr("cx", 100)
   .attr("cy", 100)
   .attr("r", 50)
-  .attr("fill", "#49d6d1");
+  .attr("fill", "#000000");
 
 d3.selectAll("circle")
   //En transition begynder
@@ -19,13 +19,13 @@ d3.selectAll("circle")
   //duration er hvor lang tid transitionen skal tage
   .duration(2000)
   //herunder definerer vi slutværdierne for transitionen - cirklens cx rykkes således fra 100 - 600
-  .attr("cx", 600)
+  .attr("cx", 900)
   //Nu strater vi endnu en trasition som skal bevæge cirklen tilbage til 100
   .transition()
   //duration er hvor lang tid transitionen skal tage
-  .duration(2000)
+  .duration(4000)
   //herunder definerer vi slutværdierne for transitionen - cirklens cx rykkes således tilbage fra 600 - 100
-  .attr("cx", 100);
+  .attr("cx", 450);
 
 /**
  * Havde vi haft en knap et sted på siden, kunne vi have fået animationen til at starte ved klik på knappen:
