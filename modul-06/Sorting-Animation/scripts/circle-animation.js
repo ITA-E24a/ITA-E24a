@@ -2,8 +2,8 @@
 const svg = d3
   .select("body")
   .append("svg")
-  .attr("width", 1000)
-  .attr("height", 1000);
+  .attr("width", 1500)
+  .attr("height", 1500);
 
 //Vi putter en cirkel ind i SVG-elementet
 svg
@@ -19,17 +19,31 @@ d3.selectAll("circle")
   //duration er hvor lang tid transitionen skal tage
   .duration(2000)
   //herunder definerer vi slutværdierne for transitionen - cirklens cx rykkes således fra 100 - 600
-  .attr("cx", 600)
+  .attr("cx", 1350)
+  .attr("fill", "yellow")
+
+  //Nu strater vi endnu en trasition som skal bevæge i en trekant
+  .transition()
+  //duration er hvor lang tid transitionen skal tage
+  .duration(2000)
+  //herunder definerer vi slutværdierne for transitionen - cirklens cx rykkes således tilbage fra 600 - 100
+  .attr("cx", 675)
+  .attr("cy", 500)
+  .attr("fill", "red")
+  
+  
+  
   //Nu strater vi endnu en trasition som skal bevæge cirklen tilbage til 100
   .transition()
   //duration er hvor lang tid transitionen skal tage
   .duration(2000)
   //herunder definerer vi slutværdierne for transitionen - cirklens cx rykkes således tilbage fra 600 - 100
-  .attr("cx", 100);
-
-/**
- * Havde vi haft en knap et sted på siden, kunne vi have fået animationen til at starte ved klik på knappen:
- * d3.select("#startAnimationBtn")
+  .attr("cx", 100)
+  .attr("cy", 100)
+  .attr("fill", "#49d6d1");
+ 
+  
+  d3.select("#startAnimationBtn")
   .on("click", function () {
     d3.selectAll("circle")
       .transition() 
@@ -39,5 +53,9 @@ d3.selectAll("circle")
       .duration(2000)
       .attr("cx", 100)
   });
-  * Bonusopgave: implementer en knap som starter animationen og få cirklen til at bevæge sig i en trekant.
+
+  
+  
+  
+  /* Bonusopgave: implementer en knap som starter animationen og få cirklen til at bevæge sig i en trekant.
  */

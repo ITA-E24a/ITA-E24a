@@ -100,8 +100,8 @@ svg
 /** --- Akser: --- */
 
 // Definere akserne til x og y (læg mærke til de to typer!):
-const xAxis = d3.axisBottom().scale(xScale).ticks(5);
-const yAxis = d3.axisLeft().scale(yScale).ticks(5);
+const xAxis = d3.axisBottom().scale(xScale).ticks(10);
+const yAxis = d3.axisLeft().scale(yScale).ticks(1);
 
 //Lægge akserne til SVG-elementet:
 
