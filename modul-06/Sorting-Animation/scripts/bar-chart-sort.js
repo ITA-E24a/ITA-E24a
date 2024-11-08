@@ -97,7 +97,7 @@ function createDefaultChart(dataset) {
      * I dette tilfælde er det dato-stemplet, som er unikt for hvert datapunkt.
      * */
     .data(dataset, function (d) {
-      return d[3];
+      return d[2];
     })
     .enter()
     .append("rect")
