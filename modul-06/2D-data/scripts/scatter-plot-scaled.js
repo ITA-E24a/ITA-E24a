@@ -73,7 +73,7 @@ svg
   })
   //Placering på x-aksen
   .attr("x", function (d) {
-    return xScale(d[0]) + 50;
+    return xScale(d[0]) + 5;
   })
   //Placering på y-aksen
   .attr("y", function (d) {
