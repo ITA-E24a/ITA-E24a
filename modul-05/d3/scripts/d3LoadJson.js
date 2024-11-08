@@ -1,5 +1,9 @@
+let incomingData = "";
+
 d3.json("data/albums.json").then(function (data) {
   console.log(data);
+  incomingData = data;
+  doStuff(data);
 
   d3.select("#dataJSON").append("h2").text("JSON Data:");
 
@@ -28,6 +32,8 @@ d3.json("data/albums.json").then(function (data) {
     cdObjects.push(cd);
   }
 
+  console.log("TEST: " + cdObjects[4].toString());
+
   console.log(cdObjects);
 
   d3.select("#dataOBJ").append("h2").text("Object Data:");
@@ -47,8 +53,16 @@ d3.json("data/albums.json").then(function (data) {
     });
 });
 
+function doStuff(dataset) {
+  console.log(dataset);
+}
+console.log(incomingData);
+
 function CD(artist, title, numberOfTracks) {
   this.artist = artist;
   this.title = title;
   this.numberOfTracks = numberOfTracks;
+  this.toString = () => {
+    return this.artist + " " + this.title;
+  };
 }
